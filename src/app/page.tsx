@@ -1,9 +1,39 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+import vercelImg from '../../public/vercel.svg'
+//https://nextjs.org/docs/pages/building-your-application/optimizing/images#image-imports
+
+const BASEPATH = "/0904"
+
 export default function Home() {
   return (
     <main className={styles.main}>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quo doloribus fugiat pariatur officiis consectetur deleniti. Delectus quidem recusandae minima vero reiciendis nostrum quia soluta harum perferendis, non, suscipit magni.</p>
+      <Image
+        src="/0904/vercel.svg"
+        alt="Vercel Logo"
+        className={styles.vercelLogo}
+        width={100}
+        height={24}
+        priority
+      />
+      <Image
+        src={vercelImg}
+        alt="Vercel Logo importando la imagen"
+        className={styles.vercelLogo}
+      />
+      <Image
+        src={`${BASEPATH}/vercel.svg`}
+        alt="Vercel Logo usando un const"
+        height={24}
+        width={24}
+        className={styles.vercelLogo}
+
+      />
+      <p>fin del lorem</p>
+
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -24,6 +54,7 @@ export default function Home() {
               height={24}
               priority
             />
+
           </a>
         </div>
       </div>
